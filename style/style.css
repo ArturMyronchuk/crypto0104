@@ -1,0 +1,1716 @@
+/* Загальні стилі */
+html {
+    scroll-behavior: smooth;
+  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Encode Sans, sans-serif;
+  }
+  a{
+    text-decoration: none;
+
+  }
+li{
+    list-style: none;
+}
+
+
+  /* Хедер */
+  .site-header {
+    background-color: #1C6FE8;
+    padding: 20px 0;
+  }
+  .container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .container_header {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+  }
+  
+  /* Лого */
+  .logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    flex-shrink: 0;
+    
+  }
+  
+  /* Меню */
+  .desktop-menu {
+    display: flex;
+    gap: 25px;
+    justify-content: flex-end;
+    flex: 1;
+  
+  }
+  
+  .desktop-menu a {
+    color: white;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.3;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  
+  /* Кнопка */
+  .spots-button {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.3; 
+    text-decoration: none;
+    white-space: nowrap;
+   background-color: #75C22B;
+   padding: 10px 20px;
+   color: #fff;
+   border-radius: 6px;
+  }
+  
+  /* Бургер */
+  .burger {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Мобільна версія */
+  @media (max-width: 768px) {
+    .container {
+      justify-content: space-between;
+      gap: 10px;
+    }
+  
+    .logo {
+      order: 1;
+    }
+  
+    .spots-button {
+      order: 2;
+    }
+  
+    .burger {
+      display: block;
+      order: 3;
+    }
+  
+    .desktop-menu {
+        position: absolute;
+        top: 60px;
+        right: 0px;
+        background: #1e7efc;
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
+        border-radius: 8px;
+        width: 100%;
+        z-index: 100;
+      
+        /* Сховане за замовчуванням */
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      
+      .desktop-menu.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      
+  }
+  /* Hero Section */
+/* === HERO SECTION (Загальний блок) === */
+.hero {
+    background-color: #1C6FE8;
+    padding: 60px 0;
+    color: white;
+  }
+  
+  .hero .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  /* === ЛІВА ЧАСТИНА === */
+  .hero-left {
+    flex: 1;
+    max-width: 50%;
+    min-width: 300px;
+    padding-top: 120px;
+  }
+  
+  .hero-left h1 {
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+  
+  .hero-left .highlight {
+    color: #ffb000;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    
+  }
+  
+  .subtext {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 50px;
+  }
+  
+  .location {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 40px;
+  }
+  
+  .reviews {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .avatars {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #fff;
+    margin-left: -10px;
+    background-color: #ccc;
+  }
+  
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .stars {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #FFFFFFCC;
+  }
+  
+  /* === ПРАВА ЧАСТИНА (Форма) === */
+  .hero-right {
+ 
+    width: 100%;
+    max-width: 490px;
+    position: relative;
+  }
+  
+  /* === Заголовок над формою === */
+  .form-header {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .form-logo {
+    display: block;
+    max-width: 100px;
+    margin: 0 auto 5px auto;
+    margin-bottom: 40px;
+
+  }
+  
+  .signup-text {
+    font-weight: 900;
+    font-size: 19px;
+    line-height: 1.3;
+    text-align: center;
+    color: #fff;
+    
+  }
+  
+  /* === Стрілочка зліва від форми === */
+  .form-arrow {
+    position: absolute;
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* === Вхідні поля === */
+  .signup-form{
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 16px;
+  }
+  .signup-form p {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #000000;
+  }
+  
+  .signup-form input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    border: 1px solid #00000033;
+    font-family: Inter;
+font-weight: 400;
+font-size: 16px;
+
+
+  }
+  .signup-form input:focus {
+    border-color: #1e7efc;
+    outline: none;
+  }
+  /* === Телефон з прапором всередині input === */
+  .phone-input {
+    position: relative;
+    margin-bottom: 12px;
+  }
+  
+  .phone-input input {
+    width: 100%;
+    padding: 15px 10px 15px 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .flag-img {
+    position: absolute;
+    left: 12px;
+    top: 35%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 16px;
+    pointer-events: none;
+   
+  }
+  
+  /* === Кнопка форми === */
+  .signup-form button {
+    width: 100%;
+    padding: 14px;
+    background: #FF5F00;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.3;
+    cursor: pointer;
+    padding: 20px 0;
+  }
+  
+  /* === Інформація про безпеку === */
+  .secure{
+    display: flex;
+    align-items: center;
+    gap:20px;
+    padding: 0 30px;
+  }
+  img.secure-icon {
+    margin-top: 20px;
+}
+  .secure-info {
+   
+    font-size: 10px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .form_bottom_title{
+    font-family: Inter;
+font-weight: 700;
+font-size: 10px;
+line-height: 1.3;
+text-align: left;
+color: #fff;
+margin-bottom: 3px;
+
+  }
+  .form_bottom_sub{
+    font-family: Inter;
+font-weight: 400;
+font-size: 6px;
+line-height: 100%;
+color: #FFFFFF;
+text-align: left;
+  }
+  
+  /* === Іконки платіжних систем === */
+  .payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .payment-icons .icon {
+ margin-top: 10px;
+  }
+  
+  /* === АДАПТИВНА ВЕРСТКА === */
+  @media (max-width: 1024px) {
+    .hero .container {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  
+    .hero-left,
+    .hero-right {
+      max-width: 100%;
+    }
+  
+    .hero-left h1 {
+      font-size: 26px;
+    }
+  
+    .hero-left .highlight {
+      font-size: 32px;
+    }
+  
+    .form-arrow {
+      display: none;
+    }
+  }
+  @media (max-width: 768px){
+
+      .hero-left {
+     
+        padding-top: 0px;
+      }
+  }
+/* === СЕКЦІЯ ВІДГУКІВ (Testimonials Section) === */
+.testimonials {
+    padding: 30px 0;
+    background-color: #fff;
+  }
+  
+  /* === Контейнер для відгуків === */
+  .testimonials .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  /* === Окремий відгук === */
+  .testimonial {
+    display: flex;
+    border: 1px solid #ff914d;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  /* === Зображення автора відгуку === */
+  .testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* === Контент відгуку === */
+  .testimonial-content {
+    padding: 20px;
+    flex: 1;
+    margin-top: 35px;
+  }
+  
+  .testimonial-content h3 {
+font-weight: 900;
+font-size: 24px;
+line-height: 1.3;
+    margin-bottom: 15px;
+    color: #0D1210;
+  }
+  
+  .testimonial-content .role {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.3;
+    text-transform: uppercase;
+
+    color: #546880;
+    margin-bottom: 25px;
+  }
+  
+  .testimonial-content p {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;   
+    color: #546880;
+  }
+  
+  /* === НИЖНІЙ БЛОК З КНОПКОЮ (Testimonials Footer) === */
+  .testimonials-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+  
+  /* === Заголовок блоку "Алгоритмы бизнеса" === */
+  .section-label{
+    font-family: Inter;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #546880;
+    
+  } 
+  .testimonials-footer  {
+    color: #516175;
+    /* text-transform: uppercase; */
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  
+  /* === Основний заголовок === */
+  .testimonials-footer h4 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.3;
+    color: #0D1210;
+    margin: 0;
+    flex: 1;
+    max-width: 810px;
+  }
+  .testimonials-footer span{
+    font-weight: 900;
+  }
+  
+  /* === Кнопка "Немедленный заработок" === */
+  .testimonials-footer .cta-button {
+font-weight: 800;
+font-size: 16px;
+line-height: 1.3;
+text-align: center;
+
+    background-color: #75C22B;
+    color: white;
+    padding: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .testimonials-footer .cta-button:hover {
+    background-color: #6b9c16;
+  }
+  
+  /* === АДАПТИВНІ СТИЛІ (768px) === */
+  @media (max-width: 768px) {
+    .testimonial {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .testimonial-image img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .testimonial-content {
+      padding: 20px 15px;
+    }
+  
+    .testimonials-footer {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+  
+    .testimonials-footer h2 {
+      font-size: 18px;
+    }
+  
+    .testimonials-footer .cta-button {
+      margin-top: 15px;
+    }
+  }
+  
+  /* === АДАПТИВНІ СТИЛІ (480px) === */
+  @media (max-width: 480px) {
+    .testimonials-footer .cta-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+
+  
+  /* Секція криптовалют */
+  .crypto-section {
+    padding: 20px 0px;
+  }
+  
+  /* Вигляд для криптовалют */
+  .crypto-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+    background-color: #1C6FE8;
+    padding:  80px;
+  }
+  
+  .crypto-column {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .crypto-card {
+    background-color: #FFFFFF0D;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .crypto_box_info{
+  }
+  .crypto-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+  }
+  .crypto-details{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .crypto-details h3 {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    
+    color: white;
+    margin: 0;
+  }
+  
+  .crypto-details p {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #FFFFFF66;
+    margin: 5px 0;
+  }
+  
+  .crypto-details span {
+    font-family: Inter;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #75C22B;
+  }
+  
+  /* Стіль для телефону */
+  .mobile-phone {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: -63px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+  
+  .mobile-phone img {
+    max-width: 100%;
+  }
+  
+  /* Мобільний адаптив */
+  @media (max-width: 1200px){
+    .crypto-column{
+        width: inherit;
+    }
+  }
+
+  @media (max-width:1025px) {
+    .mobile-phone img {
+        width: 50%;
+    }
+    .crypto-info{
+        padding: 80px 15px;
+    }
+    .mobile-phone {
+   
+        top: inherit;
+      
+    }
+  }
+  @media (max-width: 768px) {
+    .crypto-info {
+      flex-direction: column;
+      align-items: center;
+      gap: 350px;
+    }
+  
+    .crypto-column {
+      width: 100%;
+    }
+  
+    .crypto-card {
+      margin-bottom: 20px;
+    }
+  
+    .crypto-icon {
+      width: 35px;
+      height: 35px;
+    }
+    .mobile-phone {
+        top: 351px;
+    }
+    .mobile-phone img {
+      width: 100%;
+    }
+   
+  }
+  @media (max-width: 600px){
+    .crypto-info {
+        gap: 353px;
+    }
+
+  }
+  @media (max-width: 500px){
+    .crypto-info {
+        gap: 227px;
+    }
+
+  }
+  
+/* Загальні стилі */
+.client-reviews {
+    padding: 60px 0;
+    color: #333;
+  }
+  
+  .client-reviews {
+
+    margin: 0 auto;
+  }
+  
+  .client-reviews h2 {
+    font-family: Inter;
+font-weight: 900;
+font-size: 14px;
+line-height: 1.3;
+text-transform: uppercase;
+color: #546880;
+    margin-bottom: 20px;
+  }
+  .client_desc{
+    display: flex;
+    margin-bottom: 30px;
+  }
+  .client-reviews .main-text {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.3;
+    color: #0D1210;
+  }
+  
+  .client-reviews .sub-text {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #546880;
+    max-width: 490px;
+  }
+  
+  /* Стилі для карток відгуків */
+  .reviews_client {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .review-card {
+    background-color: #F6F6F6;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
+  }
+  
+  .review-card .review-header {
+    margin-bottom: 15px;
+    text-align: start;
+  }
+  
+  .review-card .stars {
+    font-size: 1.5em;
+    color: #ffb400;
+  }
+  
+  .review-card .review-body {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .review-card .review-text {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    color: #546880;
+  }
+  
+  .review-card .review-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+ gap: 10px;
+    
+  }
+  
+  .review-card .avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .review-card .name-earnings {
+    text-align: left;
+  }
+  
+  .review-card .name {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .review-card .earnings {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #fff;
+    padding: 5px;
+    background-color: #FF5F00;
+    border-radius: 4px;
+  }
+  
+  /* Адаптивність */
+  @media (max-width: 1200px){
+    .review-card{
+        min-height: 400px;
+    
+    }
+    .review-card .review-footer {
+        flex-direction: column;
+    }
+  }
+  @media (max-width: 978px){
+    .reviews{
+        padding: 0 100px;
+    }
+    .review-card{
+      width: 100%;
+      min-height: inherit;
+    }
+  
+    
+  }
+  @media (max-width: 768px) {
+    .review-card {
+      width: 100%; /* Картки займають всю ширину екрану */
+    }
+    .reviews{
+        padding: 0;
+    }
+    .client-reviews h2 {
+      font-size: 18px; /* Зменшення розміру шрифта заголовку */
+    }
+    .client_desc {
+  
+        flex-direction: column;
+        gap: 30px;
+    }
+    .review-card .earnings {
+        font-size: 14px;
+      
+      }
+  
+    .client-reviews .main-text,
+    .client-reviews .sub-text {
+      font-size: 1em; /* Зменшення шрифтів текстів */
+    }
+  
+    .reviews {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+
+  /* Секція "Наши преимущества" */
+/* Секція "Наши преимущества" */
+.our-benefits{
+    background-color: #1C6FE873;
+    padding-top: 50px;
+}
+.benefits_title{
+    font-family: Inter;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: #1C6FE8;
+    
+}
+.benefits_content{
+    display: flex;
+    
+}
+.content_left{
+max-width: 900px;
+font-family: Encode Sans;
+font-weight: 900;
+font-size: 24px;
+line-height: 1.3;
+color: #FFFFFF;
+
+}
+.content_right{
+    font-family: Inter;
+font-weight: 700;
+font-size: 18px;
+line-height: 1.3;
+color: #1C6FE8;
+}
+
+.benefits_item{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-bottom: 70px;
+}
+.benefits_link{
+    max-width: 410px;
+}
+.benefits_text{
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.3;
+     color: #fff;
+     margin-bottom: 20px;
+}
+.benefits_box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.benefits_img{
+    width: 80px;
+    height: 80px;
+}
+.benefits_box_content{
+    max-width: 340px;
+    font-family: Inter;
+font-weight: 400;
+font-size: 16px;
+line-height: 1.3;
+color: #fff;
+
+}
+.bentfits_bottom_content{
+padding: 30px 0;
+background-color: #1C6FE8;
+color: #fff;
+text-align: center;
+font-weight: 900;
+font-size: 24px;
+line-height: 1.3;
+}
+
+@media (max-width: 1100px){
+    .benefits_item {
+        flex-direction: column;
+        align-items: center;
+        gap: 55px;
+    }
+}
+
+
+@media (max-width: 768px){
+    .benefits_content{
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+
+/* Стилі для секції "Про нас" */
+.about-us {
+    padding: 60px 0;
+  }
+  
+
+  
+  .about-us-content {
+    display: flex;
+  }
+  
+  .about-us-image img {
+    border-radius: 8px;
+  }
+  
+  .about-us-text {
+    padding-left: 30px;
+  }
+  
+  .about-us-text h2 {
+    font-family: Inter;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 1.3;
+    text-transform: uppercase;    
+    margin-bottom: 20px;
+    color: #546880;
+  }
+  .about-text-top{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.3;
+    color: #0D1210;
+    max-width: 680px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  .about-text-top span{
+    font-weight: 900;
+  }
+  .about-text-bottom{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;
+    max-width: 900px;
+    color: #546880;
+    margin-bottom: 60px;
+    text-align: left;
+  }
+  .abount_btn{
+    text-align: center;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #75C22B;
+    color: white;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 1.3;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #218c53;
+  }
+  
+  /* Адаптивні стилі */
+  @media screen and (max-width: 1024px) {
+    .about-us .container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-us-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .about-us-image img {
+      max-width: 80%;
+      margin-bottom: 20px;
+    }
+  
+    .about-us-text {
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 20px;
+    }
+  
+    .about-us-text h2 {
+      font-size: 24px;
+    }
+  
+}
+  
+  @media screen and (max-width: 768px) {
+    .about-us .container {
+      padding: 0 15px;
+    }
+  
+    .about-us-text h2 {
+      font-size: 22px;
+    }
+  
+  }
+
+
+  /* ____unique-test------ */
+/* Основна секція */
+.testimonial-section {
+    background-color: #CBCBCB; /* Світло-сірий фон */
+    padding: 50px 15px;
+  }
+  
+  /* Контейнер відгуків */
+  .testimonial-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  /* Картка відгуку */
+  .testimonial-card {
+    background-color: #F6F6F6;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 300px;
+  }
+  
+  /* Заголовок картки */
+  .testimonial-header {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  /* Зірочки для рейтингу */
+  .testimonial-rating {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .star {
+    color: #f5a623;
+    font-size: 1.5em;
+  }
+  
+  /* Текст відгуку */
+  .testimonial-text {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3; 
+    color: #546880;
+    margin-bottom: 20px;
+  }
+  
+  /* Підвал картки */
+  .testimonial-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .testimonial-avatar {
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .testimonial-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .testimonial-name {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #1a2a4b;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-amount {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #FFFFFF;
+    padding: 5px;
+    background-color:#FF5F00 ;
+    border-radius: 4px;
+    
+  }
+  
+  /* Адаптивність для екранів шириною від 937px до 1024px */
+  @media (max-width: 1024px) and (min-width: 937px) {
+    .testimonial-container {
+      gap: 15px; /* Зменшення проміжку між картками */
+    }
+  
+    .testimonial-card {
+      width: 48%; 
+    }
+  }
+  
+  /* Адаптивність для екранів від 768px до 936px */
+  @media (max-width: 936px) {
+    .testimonial-container {
+      gap: 10px; 
+    }
+  
+    .testimonial-card {
+      width: 48%; 
+    }
+  }
+  
+  /* Адаптивність для мобільних пристроїв */
+  @media (max-width: 768px) {
+    .testimonial-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .testimonial-card {
+      width: 100%; 
+      margin-bottom: 20px;
+    }
+  
+    .testimonial-rating {
+      gap: 3px;
+    }
+  
+    .testimonial-text {
+      font-size: 1em; 
+    }
+  
+    .testimonial-name, .testimonial-amount {
+      font-size: 1.1em;
+    }
+  }
+  
+  /* ----registration-section----- */
+/* Загальний стиль для секції */
+
+  
+  
+  #counter {
+    font-size: 38px;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .counter-btn {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .counter-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .reviews-reg p {
+    margin: 40px 0;
+    background-color:#75C22B ;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    border-radius: 12px;
+font-weight: 800;
+font-size: 24px;
+line-height: 1.3;
+  }
+  
+  .review-reg {
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center; 
+    gap: 120px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto; 
+    margin-right: 15px; 
+    gap: 20px;
+  }
+  
+  
+  .user-details h3 {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #0D1210;
+    
+  }
+  
+  .stars {
+    font-size: 18px;
+    color: gold;
+    margin-top: 5px;
+  }
+  
+  .review-reg-text {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3; 
+    flex-grow: 1; /* Відгук займає весь доступний простір */
+    color: #546880;
+  }
+  
+  .feedback {
+    display: flex;
+    margin-top: 5px;
+    gap: 5px;
+  }
+  
+  .like-btn, .comment-btn {
+    color: #546880;
+    padding: 8px 16px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid #546880;
+    font-family: Inter;
+font-weight: 400;
+font-size: 16px;
+line-height: 1.3;
+
+  }
+  
+  
+  .like-btn:active, .comment-btn:active {
+    background-color: #004494;
+  }
+.registration-section-one{
+    background-color: #FFFFFF;
+}
+.registration-section-two{
+background-color: #F6F6F6;
+}
+.registration-section-three{
+    background-color: #FFFFFF;
+}
+.registration-section-four{
+    background-color:   #F6F6F6;
+    }
+
+/* ----адаптивність----- */
+    @media (max-width: 768px){
+        .review-reg {
+             gap: 10px; 
+            flex-direction: column;
+        }
+        .reviews-reg p {
+            font-size: 16px;
+        }
+        #counter {
+            font-size: 26px;
+    
+          }
+    }
+    @media (max-width: 578px){
+        .reviews-reg p {
+            font-size: 16px;
+        }
+        #counter {
+            font-size: 18px;
+    
+          }
+          .review-reg {
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        
+    }
+
+    /* Загальний стиль для секції registration-section-four */
+.form-section {
+    background-color: #f4f7fb;
+    margin: 20px 0;
+  }
+  .container-form-section{
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  .form-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .form-text {
+    max-width: 768px;
+  }
+  
+  .form-text-top {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.3;
+    color: #0D1210;
+    margin-bottom: 20px;
+  }
+  
+  .form-text-bottom {
+    font-family: Encode Sans;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 1.3;
+    color: #546880;
+    
+  }
+  
+  .form-container {
+    background-color: white;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .form-container p {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 25px;
+  }
+  
+  form input,
+  form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  form input[type="tel"] {
+    padding-left: 50px; 
+  }
+  
+  .phone-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  form select {
+    width: 25%;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    background-color: #FF5F00;
+    color: white;
+    padding: 20px 0;
+    border: none;
+    border-radius: 100px;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.3;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #e66e00;
+  }
+  @media(max-width:768px){
+    .form-content {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .form-text{
+        margin-top: 30px;
+    }
+    .form-text-top {
+        font-size: 26px;
+        
+      }
+      .form-text-bottom {
+        font-size: 22px;
+        
+      }
+  }
+  /* ----footer---- */
+  /* Стиль для футера */
+.footer {
+    background-color: #0074c1; /* Тема фонового кольору */
+    color: white;
+    padding: 40px 0;
+    font-size: 14px;
+  }
+  
+  .footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  .footer-contact {
+    display: flex;
+    gap: 30px;
+}
+.open-popup {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    
+}
+  .footer-links a {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #fff;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  .footer-text {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .footer-text a {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.3;
+    color: #fff;
+    
+  }
+
+  .footer-text p {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #fff;
+    margin-top: 25px;
+    
+  }
+  .footer-text-ahtung{
+text-transform: uppercase!important;
+font-size: 16px!important;
+  }
+  
+  .footer-text p:last-child {
+    margin-top: 50px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.3;
+    text-align: center;
+    color: #fff;
+  }
+  @media(max-width:768px){
+    .footer-content {
+        flex-direction: column;
+        gap:30px;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-contact{
+      flex-direction: column;
+        gap:30px;
+        justify-content: center;
+        align-items: center;
+    }
+  }
+  /* Стилі для модального вікна */
+/* Стилі для модального вікна */
+.popup {
+  display: none; /* Початково попап прихований */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Трохи затемнене тло */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  position: relative;
+  overflow: auto;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup p {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.3;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.popup #popup-text {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #000;
+}
+
+/* Адаптив для планшетів (ширина екрану від 768px до 1024px) */
+@media screen and (max-width: 1024px) {
+  .popup-content {
+    width: 90%; /* Робимо попап ширшим на планшетах */
+    max-width: 500px; /* Зменшуємо максимальну ширину */
+  }
+
+  .popup p {
+    font-size: 20px; /* Зменшуємо розмір шрифту на планшетах */
+  }
+
+  .popup #popup-text {
+    font-size: 14px; /* Зменшуємо розмір шрифту тексту */
+  }
+}
+
+/* Адаптив для телефонів (ширина екрану до 768px) */
+@media screen and (max-width: 768px) {
+  .popup-content {
+    width: 95%; /* Збільшуємо ширину попапу на телефонах */
+    max-width: 400px; /* Максимальна ширина попапу для мобільних */
+    padding: 15px; /* Зменшуємо відступи */
+  }
+
+  .popup p {
+    font-size: 18px; /* Зменшуємо розмір шрифту на мобільних */
+  }
+
+  .popup #popup-text {
+    font-size: 14px; /* Зменшуємо розмір шрифту тексту */
+  }
+
+  .popup-close {
+    top: 5px; /* Зменшуємо відстань від краю для кнопки закриття */
+    right: 5px;
+    font-size: 18px; /* Зменшуємо розмір шрифта для кнопки закриття */
+  }
+}
+
+
